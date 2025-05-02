@@ -13,6 +13,7 @@ from .constants import categoryName, varPrefixName
 
 var_prefix_name = varPrefixName
 
+
 class AnyType(str):
     """A special class that is always equal in not equal comparisons. Credit to pythongosssss"""
 
@@ -39,6 +40,7 @@ class InputCheckpointNode:
             "optional": {
                 "description": ("STRING", {"multiline": True, "default": ""}),
                 "order": ("INT", {"default": 0, "min": 0, "max": 0xffffff, "step": 1}),
+                "default_generate_algorithm": (["固定值", "随机值"], {"tooltip": "默认生成算法", "default": "固定值"}),
                 "placeholder": ("STRING", {"multiline": True, "default": ""})
             }
         }
@@ -48,7 +50,8 @@ class InputCheckpointNode:
     CATEGORY = f"{categoryName}/输入"
     FUNCTION = "input_checkpoint"
 
-    def input_checkpoint(self, var_name, ckpt_name, checkpoints, export, description="", order=0, ):
+    def input_checkpoint(self, var_name, ckpt_name, checkpoints, export, description="", order=0,
+                         default_generate_algorithm="固定值", placeholder=""):
         try:
             # Split enums by comma or newline, and strip whitespace
             checkpoints = [enum.strip() for enum in checkpoints.replace('\n', ',').split(',') if enum.strip()]
@@ -86,6 +89,7 @@ class InputLoraNode:
             "optional": {
                 "description": ("STRING", {"multiline": True, "default": ""}),
                 "order": ("INT", {"default": 0, "min": 0, "max": 0xffffff, "step": 1}),
+                "default_generate_algorithm": (["固定值", "随机值"], {"tooltip": "默认生成算法", "default": "固定值"}),
                 "placeholder": ("STRING", {"multiline": True, "default": ""})
             }
         }
@@ -98,7 +102,8 @@ class InputLoraNode:
     DESCRIPTION = "LoRAs are used to modify diffusion and CLIP models, altering the way in which latents are denoised such as applying styles. Multiple LoRA nodes can be linked together."
 
     def load_lora(self, var_name, model, clip, lora_name, strength_model, strength_clip, export, loras, description="",
-                  order=0):
+                  order=0,
+                  default_generate_algorithm="固定值", placeholder=""):
         try:
             if strength_model == 0 and strength_clip == 0:
                 return model, clip
@@ -120,6 +125,7 @@ class InputLoraNode:
         except Exception as e:
             print(f"raised exception: {var_name}")
             raise e
+
 
 class InputImageNode:
     def __init__(self):
@@ -147,7 +153,7 @@ class InputImageNode:
     CATEGORY = f"{categoryName}/输入"
     FUNCTION = "input_image"
 
-    def input_image(self, var_name, image, export, description="", order=0):
+    def input_image(self, var_name, image, export, description="", order=0, placeholder=""):
         if image is None:
             return None, None
         if image == self.image_base64:
@@ -173,10 +179,6 @@ class InputImageNode:
         except Exception as e:
             print(f"Exception raised: {var_name}")
             raise e
-
-
-## 生成遮罩图层
-
 
 
 class InputMaskImageNode:
@@ -206,7 +208,7 @@ class InputMaskImageNode:
     CATEGORY = f"{categoryName}/输入"
     FUNCTION = "input_image"
 
-    def input_image(self, var_name, image, export, description="", order=0):
+    def input_image(self, var_name, image, export, description="", order=0, placeholder=""):
         if image is None:
             return None, None
         if image == self.mask_image_base64:
@@ -258,8 +260,9 @@ class InputStringNode:
     CATEGORY = f"{categoryName}/输入"
     FUNCTION = "input_string"
 
-    def input_string(self, var_name, text, export, description="", order=0):
+    def input_string(self, var_name, text, export, description="", order=0, placeholder=""):
         return (text,)
+
 
 class InputEnumStringNode:
     @classmethod
@@ -274,6 +277,7 @@ class InputEnumStringNode:
             "optional": {
                 "description": ("STRING", {"multiline": True, "default": ""}),
                 "order": ("INT", {"default": 0, "min": 0, "max": 0xffffff, "step": 1}),
+                "default_generate_algorithm": (["固定值", "随机值"], {"tooltip": "默认生成算法", "default": "固定值"}),
                 "placeholder": ("STRING", {"multiline": True, "default": ""})
             }
         }
@@ -283,7 +287,8 @@ class InputEnumStringNode:
     CATEGORY = f"{categoryName}/输入"
     FUNCTION = "input_enum_string"
 
-    def input_enum_string(self, var_name, text, export, enums):
+    def input_enum_string(self, var_name, text, export, enums, description="", order=0,
+                          default_generate_algorithm="固定值", placeholder=""):
         # Split enums by comma or newline, and strip whitespace
         enums = [enum.strip() for enum in enums.replace('\n', ',').split(',') if enum.strip()]
         if text not in enums:
@@ -304,6 +309,7 @@ class InputBooleanNode:
             "optional": {
                 "description": ("STRING", {"multiline": True, "default": ""}),
                 "order": ("INT", {"default": 0, "min": 0, "max": 0xffffff, "step": 1}),
+                "default_generate_algorithm": (["固定值", "随机值"], {"tooltip": "默认生成算法", "default": "固定值"}),
                 "placeholder": ("STRING", {"multiline": True, "default": ""})
             }
         }
@@ -313,7 +319,8 @@ class InputBooleanNode:
     CATEGORY = f"{categoryName}/输入"
     FUNCTION = "input_boolean"
 
-    def input_boolean(self, var_name, value, export, description="", order=0):
+    def input_boolean(self, var_name, value, export, description="", order=0,
+                      default_generate_algorithm="固定值", placeholder=""):
         return (value,)
 
 
@@ -330,6 +337,8 @@ class InputIntNode:
             "optional": {
                 "description": ("STRING", {"multiline": True, "default": ""}),
                 "order": ("INT", {"default": 0, "min": 0, "max": 0xffffff, "step": 1}),
+                "default_generate_algorithm": (
+                    ["固定值", "随机值", "递增", "递减"], {"tooltip": "默认生成算法", "default": "固定值"}),
                 "placeholder": ("STRING", {"multiline": True, "default": ""})
             }
         }
@@ -339,7 +348,8 @@ class InputIntNode:
     CATEGORY = f"{categoryName}/输入"
     FUNCTION = "input_int"
 
-    def input_int(self, var_name, number, export):
+    def input_int(self, var_name, number, export, description="", order=0,
+                  default_generate_algorithm="固定值", placeholder=""):
         return (number,)
 
 
@@ -357,6 +367,8 @@ class InputRangeIntNode:
             "optional": {
                 "description": ("STRING", {"multiline": True, "default": ""}),
                 "order": ("INT", {"default": 0, "min": 0, "max": 0xffffff, "step": 1}),
+                "default_generate_algorithm": (
+                    ["固定值", "随机值", "递增", "递减"], {"tooltip": "默认生成算法", "default": "固定值"}),
                 "placeholder": ("STRING", {"multiline": True, "default": ""})
             }
         }
@@ -366,7 +378,8 @@ class InputRangeIntNode:
     CATEGORY = f"{categoryName}/输入"
     FUNCTION = "input_range_int"
 
-    def input_range_int(self, var_name, number, min, max, export, description="", order=0):
+    def input_range_int(self, var_name, number, min, max, export, description="", order=0,
+                        default_generate_algorithm="固定值", placeholder=""):
         if min > max:
             min, max = max, min
         if number < min:
@@ -374,6 +387,7 @@ class InputRangeIntNode:
         if number > max:
             number = max
         return (number,)
+
 
 class InputEnumIntNode:
     @classmethod
@@ -388,6 +402,7 @@ class InputEnumIntNode:
             "optional": {
                 "description": ("STRING", {"multiline": True, "default": ""}),
                 "order": ("INT", {"default": 0, "min": 0, "max": 0xffffff, "step": 1}),
+                "default_generate_algorithm": (["固定值", "随机值"], {"tooltip": "默认生成算法", "default": "固定值"}),
                 "placeholder": ("STRING", {"multiline": True, "default": ""})
             }
         }
@@ -397,7 +412,8 @@ class InputEnumIntNode:
     CATEGORY = f"{categoryName}/输入"
     FUNCTION = "input_enum_int"
 
-    def input_enum_int(self, var_name, number: int, export, enums):
+    def input_enum_int(self, var_name, number: int, export, enums, description="", order=0,
+                       default_generate_algorithm="固定值", placeholder=""):
         return (number,)
 
 
@@ -413,6 +429,8 @@ class InputFloatNode:
             "optional": {
                 "description": ("STRING", {"multiline": True, "default": ""}),
                 "order": ("INT", {"default": 0, "min": 0, "max": 0xffffff, "step": 1}),
+                "default_generate_algorithm": (
+                    ["固定值", "随机值", "递增", "递减"], {"tooltip": "默认生成算法", "default": "固定值"}),
                 "placeholder": ("STRING", {"multiline": True, "default": ""})
             }
         }
@@ -422,7 +440,8 @@ class InputFloatNode:
     CATEGORY = f"{categoryName}/输入"
     FUNCTION = "input_float"
 
-    def input_float(self, var_name, number, export):
+    def input_float(self, var_name, number, export, description="", order=0,
+                    default_generate_algorithm="固定值", placeholder=""):
         return (number,)
 
 
@@ -440,6 +459,8 @@ class InputRangeFloatNode:
             "optional": {
                 "description": ("STRING", {"multiline": True, "default": ""}),
                 "order": ("INT", {"default": 0, "min": 0, "max": 0xffffff, "step": 1}),
+                "default_generate_algorithm": (
+                    ["固定值", "随机值", "递增", "递减"], {"tooltip": "默认生成算法", "default": "固定值"}),
                 "placeholder": ("STRING", {"multiline": True, "default": ""})
             }
         }
@@ -449,7 +470,8 @@ class InputRangeFloatNode:
     CATEGORY = f"{categoryName}/输入"
     FUNCTION = "input_range_float"
 
-    def input_range_float(self, var_name, number, min, max, export):
+    def input_range_float(self, var_name, number, min, max, export, description="", order=0,
+                          default_generate_algorithm="固定值", placeholder=""):
         if min > max:
             min, max = max, min
         if number < min:
@@ -472,6 +494,7 @@ class InputEnumFloatNode:
             "optional": {
                 "description": ("STRING", {"multiline": True, "default": ""}),
                 "order": ("INT", {"default": 0, "min": 0, "max": 0xffffff, "step": 1}),
+                "default_generate_algorithm": (["固定值", "随机值"], {"tooltip": "默认生成算法", "default": "固定值"}),
                 "placeholder": ("STRING", {"multiline": True, "default": ""})
             }
         }
@@ -481,7 +504,8 @@ class InputEnumFloatNode:
     CATEGORY = f"{categoryName}/输入"
     FUNCTION = "input_enum_float"
 
-    def input_enum_float(self, var_name, number: int, export, enums):
+    def input_enum_float(self, var_name, number: int, export, enums, description="", order=0,
+                         default_generate_algorithm="固定值", placeholder=""):
         return (number,)
 
 class OutputImageNode:

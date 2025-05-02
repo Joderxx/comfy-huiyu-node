@@ -13,7 +13,6 @@ from .constants import categoryName, varPrefixName
 
 var_prefix_name = varPrefixName
 
-
 class AnyType(str):
     """A special class that is always equal in not equal comparisons. Credit to pythongosssss"""
 
@@ -23,9 +22,7 @@ class AnyType(str):
     def __ne__(self, __value: object) -> bool:
         return False
 
-
 any = AnyType("*")
-
 
 class InputCheckpointNode:
     @classmethod
@@ -124,7 +121,6 @@ class InputLoraNode:
             print(f"raised exception: {var_name}")
             raise e
 
-
 class InputImageNode:
     def __init__(self):
         self.image = None
@@ -180,6 +176,7 @@ class InputImageNode:
 
 
 ## 生成遮罩图层
+
 
 
 class InputMaskImageNode:
@@ -263,7 +260,6 @@ class InputStringNode:
 
     def input_string(self, var_name, text, export, description="", order=0):
         return (text,)
-
 
 class InputEnumStringNode:
     @classmethod
@@ -379,7 +375,6 @@ class InputRangeIntNode:
             number = max
         return (number,)
 
-
 class InputEnumIntNode:
     @classmethod
     def INPUT_TYPES(s):
@@ -488,7 +483,6 @@ class InputEnumFloatNode:
 
     def input_enum_float(self, var_name, number: int, export, enums):
         return (number,)
-
 
 class OutputImageNode:
 

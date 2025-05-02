@@ -1,6 +1,5 @@
 from .constants import categoryName
 
-
 class MathIntClampNode:
     @classmethod
     def INPUT_TYPES(s):
@@ -23,7 +22,6 @@ class MathIntClampNode:
         if value > max:
             return max
         return (value,)
-
 
 class MathFloatClampNode:
     @classmethod

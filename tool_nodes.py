@@ -27,6 +27,7 @@ class WorkflowMetadataConfigNode:
             },
         }
 
+
     RETURN_TYPES = ()
     CATEGORY = f"{categoryName}/配置"
     FUNCTION = "output_func"
@@ -62,7 +63,6 @@ class LoadImageToBase64:
         except Exception as e:
             print(f"raised exception: LoadImageToBase64")
             raise e
-
 
 class MakeLoraSelectStackNode:
     @classmethod
@@ -114,6 +114,7 @@ class MakeLoraSelectStackNode:
         return (loras,)
 
 
+
 class LoraSelectNode:
 
     @classmethod
@@ -157,7 +158,6 @@ class LoraSelectNode:
         else:
             return (None,)
 
-
 class ImageWorkflowMetadataNode:
     @classmethod
     def INPUT_TYPES(s):
@@ -173,6 +173,7 @@ class ImageWorkflowMetadataNode:
             },
         }
 
+
     RETURN_TYPES = ("INT", "INT", "BOOLEAN", "INT", "INT", "INT", "INT")
     RETURN_NAMES = ("文档宽度", "文档高度", "是否存在选区", "选区位置X", "选区位置Y", "选区宽度", "选区高度")
     CATEGORY = f"{categoryName}/工具"
@@ -183,7 +184,6 @@ class ImageWorkflowMetadataNode:
                     selection_width=0, selection_height=0):
         return (
         document_width, document_height, has_selection, selection_x, selection_y, selection_width, selection_height)
-
 
 class ImageWorkflowMetadataTestNode:
     @classmethod
@@ -199,6 +199,7 @@ class ImageWorkflowMetadataTestNode:
                 "selection_height": ("INT", {"default": 0}),
             },
         }
+
 
     RETURN_TYPES = ("INT", "INT", "BOOLEAN", "INT", "INT", "INT", "INT")
     RETURN_NAMES = ("文档宽度", "文档高度", "是否存在选区", "选区位置X", "选区位置Y", "选区宽度", "选区高度")
@@ -252,7 +253,6 @@ class ImageMaskNode:
 
         return img
 
-
 class ImageMaskTestNode:
     @classmethod
     def INPUT_TYPES(s):
@@ -292,7 +292,6 @@ class ImageMaskTestNode:
         img = torch.from_numpy(img)[None,]
 
         return img
-
 
 class GenerateImageMaskNode:
     @classmethod

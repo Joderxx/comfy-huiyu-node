@@ -2,7 +2,6 @@ from io import BytesIO
 import struct
 import torchaudio
 
-
 def encode_string(name: str, string: str) -> bytes:
     bytesIO = BytesIO()
     ns = name.encode("utf-8")
@@ -12,7 +11,6 @@ def encode_string(name: str, string: str) -> bytes:
     bytesIO.write(struct.pack(">I", len(val)))
     bytesIO.write(val)
     return bytesIO.getvalue()
-
 
 def encode_image(name: str, image) -> bytes:
     bytesIO = BytesIO()

@@ -8,11 +8,11 @@ from .constants import prefixName
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), "dependencies"))
 
 import logging
-
 console_handler = logging.StreamHandler()
 logging.root.addHandler(console_handler)
 console_handler.setFormatter(
     logging.Formatter('%(asctime)s.%(msecs)03d [%(levelname)s] [%(filename)s:%(lineno)d] %(message)s'))
+
 
 WEB_DIRECTORY = "web"
 

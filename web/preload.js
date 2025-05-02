@@ -10,6 +10,11 @@ document.head.appendChild(htmlStyleElement);
 const htmlDivElement = document.createElement("div");
 htmlDivElement.className = "comfyui-button-group"
 
+let boxElement = document.querySelector("body > div.comfyui-body-top > div > div.comfyui-menu-right > div");
+if (!boxElement) {
+  boxElement = document.querySelector("#comfyui-body-top > div.comfyui-menu.flex.items-center > div.comfyui-menu-right.flex-shrink-0 > div")
+}
+boxElement.appendChild(htmlDivElement);
 
 const exportBtn = document.createElement("button");
 exportBtn.className = "comfyui-button";

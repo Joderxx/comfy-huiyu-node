@@ -66,7 +66,7 @@ class MathFloatScaleNode:
     FUNCTION = "clamp_float"
 
     def clamp_float(self, value, input_min, input_max, output_min, output_max):
-        b = (input_max - input_min) * (output_max - output_min) + output_min
+        b = (input_max - input_min)
         if b == 0:
             return (output_min,)
-        return ((value - input_min) / b,)
+        return ((value - input_min) / b * (output_max - output_min) + output_min,)

@@ -1,20 +1,16 @@
-import os
-import sys
-from . import custom_nodes
-from . import math_nodes
-from . import tool_nodes
-from .constants import prefixName
-
-sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), "dependencies"))
-
 import logging
+
+from .nodes import custom_nodes
+from .nodes import math_nodes
+from .nodes import tool_nodes
+from .nodes.constants import prefixName
+
 console_handler = logging.StreamHandler()
 logging.root.addHandler(console_handler)
-console_handler.setFormatter(
-    logging.Formatter('%(asctime)s.%(msecs)03d [%(levelname)s] [%(filename)s:%(lineno)d] %(message)s'))
+console_handler.setFormatter(logging.Formatter('%(asctime)s.%(msecs)03d [%(levelname)s] [%(filename)s:%(lineno)d] %(message)s'))
 
 
-WEB_DIRECTORY = "web"
+WEB_DIRECTORY = "./web/js"
 
 NODE_CLASS_MAPPINGS = {
     f"{prefixName}LoadImageToBase64": tool_nodes.LoadImageToBase64,
@@ -80,6 +76,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     f"{prefixName}CMaster_InputFloat": "浮点数输入",
     f"{prefixName}CMaster_InputEnumFloat": "浮点数枚举输入",
     f"{prefixName}CMaster_InputRangeFloat": "范围浮点数输入",
+
     f"{prefixName}CMaster_OutputImage": "图片输出",
 }
 

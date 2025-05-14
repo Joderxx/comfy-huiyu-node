@@ -1,0 +1,14 @@
+[project]
+name = "ComfyUI-Huiyu"
+description = "这个项目主要为绘屿AI自定义节点"
+version = "1.0.0"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/Joderxx/comfy-huiyu-node.git"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.setuptools.packages.find]
+exclude = ["web"]

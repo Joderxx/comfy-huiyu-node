@@ -1,0 +1,20 @@
+{
+  "name": "comfy.huiyu",
+  "version": "1.0.0",
+  "description": "This project is generated from HuiYu AI ",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+
+    "@comfyorg/litegraph": "^0.15.8",
+    "@types/node": "^22.13.4",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0"
+  },
+  "devDependencies": {
+    "@comfyorg/comfyui-frontend-types": "^1.19.9",
+    "@rollup/plugin-inject": "^5.0.5"
+  }
+}

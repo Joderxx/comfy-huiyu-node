@@ -1,23 +1,7 @@
-const prefixName = ""
-const varPrefixName = "ComfyMasterVar_"
-
+import {ParameterType,  prefixName, varPrefixName} from "./common";
 
 export async function checkVarName() {
   const p = await window.app.graphToPrompt()
-
-  for (const node of p.workflow.nodes) {
-    const name = node.type
-
-    if (name === `${prefixName}CTool_ImageWorkflowMetadataTestNode`) {
-      alert("存在节点 ‘图片元数据(测试)’")
-      return false
-    }
-
-    if (name === `${prefixName}CTool_ImageMaskTestNode`) {
-      alert("存在节点 ‘遮罩数据(测试)’")
-      return false
-    }
-  }
 
   let findOutput = false
   for (let node of Object.values(p.output)) {
@@ -74,6 +58,7 @@ export async function exportPrompt() {
   const workflow = {...p.output}
   let metadataNode: any
   let metadataNodeKey: any
+  let os: "Windows" | "Macos" | "Linux" = "Windows"
   for (let [key, value] of Object.entries(workflow)) {
     if (value.class_type === `${prefixName}CMaster_InputImage` || value["class_type"] === `${prefixName}CMaster_InputMaskImageNode`) {
       value.inputs["image"] = ""
@@ -82,12 +67,18 @@ export async function exportPrompt() {
     } else if (value.class_type === `${prefixName}WorkflowMetadataConfig`) {
       metadataNode = value
       metadataNodeKey = key
+      os = value.inputs["os"]
+    } else if (value.class_type === `${prefixName}CTool_ImageMaskTestNode`) {
+      value.class_type = `${prefixName}CTool_ImageMaskNode`
+      value.inputs = {}
+    } else if (value.class_type === `${prefixName}CTool_ImageWorkflowMetadataTestNode`) {
+      value.class_type = `${prefixName}CTool_ImageWorkflowMetadataNode`
+      value.inputs = {}
     }
     if (value._meta) {
       //@ts-ignore
       value._meta.group = getGroup(key, p.workflow, p.output)
     }
-
   }
 
   if (metadataNodeKey) {
@@ -102,18 +93,21 @@ export async function exportPrompt() {
   if (type === -1) {
     type = 0
   }
+  const params: any[] = Object.values(workflow).filter(e => e.class_type.startsWith(`${prefixName}CMaster_Input`)).map(e => parseInput(e, os))
+  const outputs: any[] = Object.values(workflow).filter(e => e.class_type.startsWith(`${prefixName}CMaster_Output`)).map(e => parseOutput(e))
+
   const saveObj = {
     code: metadataNode?.inputs?.code || "",
-    name:  metadataNode?.inputs?.name || "",
-    description:  metadataNode?.inputs?.description || "",
+    name: metadataNode?.inputs?.name || "",
+    description: metadataNode?.inputs?.description || "",
     type: type,
     modelType: modelType,
     groupInfo: metadataNode?.inputs?.groupInfo || "",
     maxWidth: metadataNode?.inputs?.maxWidth || 2048,
     maxHeight: metadataNode?.inputs?.maxHeight || 2048,
     workflow: workflow,
-    params: Object.values(workflow).filter(e => e.class_type.startsWith(`${prefixName}CMaster_Input`)).map(e => parseInput(e)),
-    outputs: Object.values(workflow).filter(e => e.class_type.startsWith(`${prefixName}CMaster_Output`)).map(e => parseOutput(e))
+    params,
+    outputs
   }
   return {
     name: metadataNode?.inputs?.name || "",
@@ -121,26 +115,11 @@ export async function exportPrompt() {
   }
 }
 
-const ParameterType = {
-  None: 0,
-  Boolean: 1,
-  Number: 2,
-  String: 3,
-  Image: 4,
-  Range_Number: 5,
-  Enum_String: 6,
-  Float: 7,
-  Range_Float: 8,
-  Image_Mask: 9,
-  Switch: 10,
-  Switch_Group: 11,
-  Enum_Int: 12,
-  Enum_Float: 13,
-}
+
 
 const algorithms = ["", "固定值", "随机值", "递增", "递减"]
 
-function parseInput(node) {
+function parseInput(node: any, os: "Windows" | "Macos" | "Linux") {
   const type = node.class_type
   const varName = node.inputs["var_name"]
   const newVarName = `${varPrefixName}${varName}`;
@@ -205,7 +184,6 @@ function parseInput(node) {
     }
   } else if (type === `${prefixName}CMaster_InputBoolean`) {
     const num = node.inputs["value"]
-
     ret = {
       key: newVarName,
       name: description,
@@ -313,10 +291,16 @@ function parseInput(node) {
       group,
       placeholder
     }
-  }else if (type === `${prefixName}CMaster_InputCheckpoint`) {
+  } else if (type === `${prefixName}CMaster_InputCheckpoint`) {
     const text = node.inputs["ckpt_name"]
-    const enums = node.inputs["checkpoints"]
-
+    const enums: string = (node.inputs["checkpoints"] || "").split("\n").map(e => e.trim()).map(e => {
+        if (os === "Windows") {
+          e = e.replace(/\//g, "\\")
+        } else {
+          e = e.replace(/\\/g, "/")
+        }
+        return e
+      }).join("\n")
     ret = {
       key: newVarName,
       name: description,
@@ -331,8 +315,14 @@ function parseInput(node) {
     }
   } else if (type === `${prefixName}CMaster_InputLoraNode`) {
     const text = node.inputs["lora_name"]
-    const enums = node.inputs["loras"]
-
+    const enums: string = (node.inputs["loras"] || "").split("\n").map(e => e.trim()).map(e => {
+        if (os === "Windows") {
+          e = e.replace(/\//g, "\\")
+        } else {
+          e = e.replace(/\\/g, "/")
+        }
+        return e
+      }).join("\n")
     ret = {
       key: newVarName,
       name: description,
@@ -356,7 +346,7 @@ function parseInput(node) {
       group,
       placeholder
     }
-  }else if (type === `${prefixName}CMaster_InputSwitchNode`) {
+  } else if (type === `${prefixName}CMaster_InputSwitchNode`) {
     const num = node.inputs["value"]
     ret = {
       key: newVarName,

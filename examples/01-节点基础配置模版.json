@@ -1,0 +1,3158 @@
+{
+  "id": "b092dfad-157b-420b-af4a-fe0878e5bcbd",
+  "revision": 0,
+  "last_node_id": 85,
+  "last_link_id": 85,
+  "nodes": [
+    {
+      "id": 26,
+      "type": "CMaster_OutputImage",
+      "pos": [
+        22972.3359375,
+        -779.1812744140625
+      ],
+      "size": [
+        424.1275939941406,
+        510.81610107421875
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 53,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 28
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "CMaster_OutputImage",
+        "aux_id": "comfy-ui-nodes-o.git",
+        "ver": "c844d7713eff2517b09ed1ac92444bf19e6c6c5a"
+      },
+      "widgets_values": [
+        "OutputImage",
+        true,
+        "",
+        0
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 15,
+      "type": "LoadImageToBase64",
+      "pos": [
+        20752.728515625,
+        -773.1754150390625
+      ],
+      "size": [
+        381.7713623046875,
+        397.7803039550781
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImageToBase64",
+        "aux_id": "comfy-ui-nodes-o.git",
+        "ver": "d628ef0ab1e399691a0437541a2fb8f98e609a1c",
+        "ttNbgOverride": {
+          "color": "#2a363b",
+          "bgcolor": "#3f5159",
+          "groupcolor": "#3f789e"
+        }
+      },
+      "widgets_values": [
+        "74bbdef16b9538dc8b3d0f53ffaf619.jpg",
+        "image",
+        ""
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 23,
+      "type": "GetNode",
+      "pos": [
+        22171.822265625,
+        -781.6739501953125
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            25
+          ]
+        }
+      ],
+      "title": "Get_model",
+      "properties": {},
+      "widgets_values": [
+        "model"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 8,
+      "type": "CLIPTextEncode",
+      "pos": [
+        22001.822265625,
+        -631.6739501953125
+      ],
+      "size": [
+        295.117431640625,
+        88
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 29
+        }
+      ],
+      "outputs": [
+        {
+          "label": "CONDITIONING",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 4,
+      "type": "CLIPTextEncode",
+      "pos": [
+        22001.822265625,
+        -731.6739501953125
+      ],
+      "size": [
+        294.0918884277344,
+        58
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 41,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 26
+        },
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 21
+        }
+      ],
+      "outputs": [
+        {
+          "label": "CONDITIONING",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        ""
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 28,
+      "type": "WorkflowMetadataConfig",
+      "pos": [
+        20752.728515625,
+        -253.17529296875
+      ],
+      "size": [
+        400,
+        310
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "TEXT-01",
+        "文生图",
+        "默认",
+        "SDXL",
+        "",
+        2048,
+        2048,
+        "",
+        "Windows"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 24,
+      "type": "GetNode",
+      "pos": [
+        22001.822265625,
+        -771.6739501953125
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            26,
+            29
+          ]
+        }
+      ],
+      "title": "Get_clip",
+      "properties": {},
+      "widgets_values": [
+        "clip"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 2,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        19731.021484375,
+        -821.2080078125
+      ],
+      "size": [
+        319.80169677734375,
+        98
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": []
+        },
+        {
+          "label": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": []
+        },
+        {
+          "label": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": []
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "SDXL\\大R_平面设计通用模型.safetensors"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "Label (rgthree)",
+      "pos": [
+        20683.16796875,
+        -1206.8548583984375
+      ],
+      "size": [
+        2638.53759765625,
+        169
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "完成配置后点击菜单栏绘屿AI导出配置，并放到指定文件夹",
+      "properties": {
+        "fontSize": 99,
+        "fontFamily": "Arial",
+        "fontColor": "#fff000",
+        "textAlign": "center",
+        "backgroundColor": "gray",
+        "padding": 35,
+        "borderRadius": 15
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 29,
+      "type": "Note",
+      "pos": [
+        21162.2578125,
+        -267.8963928222656
+      ],
+      "size": [
+        352.9130859375,
+        325.48492431640625
+      ],
+      "flags": {
+        "pinned": true
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "code:填写唯一ID号，英文或数字\nname:PS插件功能页显示名称\ntype:模式\n默认-生成图与输入画布尺寸一致\n局部重绘-通过框选区进行输入和输出\n放大-生成图按照公工作流里指定大小输出，并同步改变PS画布大小\n\nmaxWidth:输入图片最大宽度限制\nmaxHidth:输入图片最大高度限制\n\nOS:工作流运行的电脑系统环境选择\n\n\nCode: Fill in a unique ID number, in English or numbers\nName: Display Name of PS Plugin Function Page\nType: Mode\nDefault - Generate image with input canvas size consistent\nPartial redrawing - Input and output through box selection\nZoom in and generate the image according to the specified size in the workflow, and synchronously change the size of the PS canvas\n\nMaxWidth: Maximum width limit for input image\nMaxHidth: Maximum height limit for input image\n\nOS: Selection of computer system environment for workflow operation"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 31,
+      "type": "GetNode",
+      "pos": [
+        22000.9765625,
+        -506.7674560546875
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            30
+          ]
+        }
+      ],
+      "title": "Get_vae",
+      "properties": {},
+      "widgets_values": [
+        "vae"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 13,
+      "type": "VAEEncode",
+      "pos": [
+        22004.865234375,
+        -405.732421875
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 44,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "pixels",
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 19
+        },
+        {
+          "label": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 30
+        }
+      ],
+      "outputs": [
+        {
+          "label": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {},
+      "widgets_values": []
+    },
+    {
+      "id": 17,
+      "type": "CMaster_InputInt",
+      "pos": [
+        21573.287109375,
+        -280.4588317871094
+      ],
+      "size": [
+        299.7991638183594,
+        282
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "number",
+          "name": "number",
+          "type": "INT",
+          "slot_index": 0,
+          "links": [
+            20
+          ]
+        },
+        {
+          "label": "export",
+          "name": "export",
+          "type": "BOOLEAN",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CMaster_InputInt",
+        "aux_id": "comfy-ui-nodes-o.git",
+        "ver": "c844d7713eff2517b09ed1ac92444bf19e6c6c5a"
+      },
+      "widgets_values": [
+        "随机种子",
+        656820,
+        true,
+        "",
+        111,
+        "固定值",
+        ""
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 27,
+      "type": "Note",
+      "pos": [
+        21566.376953125,
+        -474.34088134765625
+      ],
+      "size": [
+        405.6664733886719,
+        139.96646118164062
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "Huiyu扩展节点配置在输入端与最后输出端即可。\nvar_name：PS界面里的显示的文字\norder：PS界面里输入显示排序，数值越大越在上面。\n\nHuiyu extension nodes can be configured at the input and final output ends.\nVar_name: The displayed text in the PS interface\nOrder: In the PS interface, enter the display order, with higher values indicating higher rankings."
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 19,
+      "type": "SetNode",
+      "pos": [
+        20544.69140625,
+        -574.985595703125
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 45,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "link": 35
+        }
+      ],
+      "outputs": [
+        {
+          "label": "*",
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_model",
+      "properties": {
+        "previousName": "model"
+      },
+      "widgets_values": [
+        "model"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 20,
+      "type": "SetNode",
+      "pos": [
+        20567.236328125,
+        -507.1289367675781
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 46,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "link": 37
+        }
+      ],
+      "outputs": [
+        {
+          "label": "*",
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_clip",
+      "properties": {
+        "previousName": "clip"
+      },
+      "widgets_values": [
+        "clip"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 21,
+      "type": "SetNode",
+      "pos": [
+        20210.96875,
+        -543.721923828125
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "link": 33
+        }
+      ],
+      "outputs": [
+        {
+          "label": "*",
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_vae",
+      "properties": {
+        "previousName": "vae"
+      },
+      "widgets_values": [
+        "vae"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 36,
+      "type": "CMaster_InputLoraNode",
+      "pos": [
+        20146.388671875,
+        -448.5594177246094
+      ],
+      "size": [
+        430.4576721191406,
+        558.8496704101562
+      ],
+      "flags": {},
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 34
+        },
+        {
+          "label": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 36
+        }
+      ],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            35
+          ]
+        },
+        {
+          "label": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            37
+          ]
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "InputLora",
+        "sdxl-PM\\摄影XL_v1.0.safetensors",
+        1,
+        1,
+        true,
+        "",
+        "",
+        0,
+        "固定值",
+        ""
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 32,
+      "type": "CMaster_InputCheckpoint",
+      "pos": [
+        19737.310546875,
+        -440.7784729003906
+      ],
+      "size": [
+        397.1982421875,
+        486.9819030761719
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            34
+          ]
+        },
+        {
+          "label": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            36
+          ]
+        },
+        {
+          "label": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            33
+          ]
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "选择模型",
+        "SDXL\\大R_平面设计通用模型.safetensors",
+        true,
+        "SD.15\\realisticVisionV20_v20-inpainting.safetensors\nSD.15\\大R-室内设计调优大模型Hyper_V1.safetensors\nSDXL\\sd_xl_base_1.0.safetensors\nSDXL\\大R_室内设计调优大模型SDXL_V1.safetensors\nSDXL\\大R_平面设计通用模型.safetensors",
+        "",
+        444,
+        "固定值",
+        ""
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 35,
+      "type": "Note",
+      "pos": [
+        21568.716796875,
+        39.551570892333984
+      ],
+      "size": [
+        405.6664733886719,
+        139.96646118164062
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "整数输入如果配置为随机种子，并显示在PS插件里\nvar_name必须为随机种子或SEED\n\n\nIf the integer input is configured as a random seed and displayed in the PS plugin\nVar_name must be a 随机种子 or SEED\n"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 40,
+      "type": "LoadImageToBase64",
+      "pos": [
+        20775.013671875,
+        350.4964904785156
+      ],
+      "size": [
+        381.7713623046875,
+        397.7803039550781
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "STRING",
+          "name": "STRING",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            41
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImageToBase64",
+        "aux_id": "comfy-ui-nodes-o.git",
+        "ver": "d628ef0ab1e399691a0437541a2fb8f98e609a1c",
+        "ttNbgOverride": {
+          "color": "#2a363b",
+          "bgcolor": "#3f5159",
+          "groupcolor": "#3f789e"
+        }
+      },
+      "widgets_values": [
+        "74bbdef16b9538dc8b3d0f53ffaf619.jpg",
+        "image",
+        ""
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 41,
+      "type": "CMaster_InputImage",
+      "pos": [
+        21185.013671875,
+        350.4964904785156
+      ],
+      "size": [
+        315,
+        258
+      ],
+      "flags": {},
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "STRING",
+          "widget": {
+            "name": "image"
+          },
+          "link": 41
+        }
+      ],
+      "outputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            50
+          ]
+        },
+        {
+          "label": "mask",
+          "name": "mask",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CMaster_InputImage",
+        "aux_id": "comfy-ui-nodes-o.git",
+        "ver": "c844d7713eff2517b09ed1ac92444bf19e6c6c5a"
+      },
+      "widgets_values": [
+        "绘制图层",
+        "",
+        true,
+        "",
+        333,
+        ""
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 48,
+      "type": "GetNode",
+      "pos": [
+        22063.005859375,
+        353.7997131347656
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            42,
+            43
+          ]
+        }
+      ],
+      "title": "Get_clip",
+      "properties": {},
+      "widgets_values": [
+        "clip"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 49,
+      "type": "GetNode",
+      "pos": [
+        22783.005859375,
+        353.7997131347656
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            39
+          ]
+        }
+      ],
+      "title": "Get_vae",
+      "properties": {},
+      "widgets_values": [
+        "vae"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 51,
+      "type": "GetNode",
+      "pos": [
+        22063.005859375,
+        623.7994995117188
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            51
+          ]
+        }
+      ],
+      "title": "Get_vae",
+      "properties": {},
+      "widgets_values": [
+        "vae"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 50,
+      "type": "Note",
+      "pos": [
+        21191.06640625,
+        873.7164916992188
+      ],
+      "size": [
+        352.9130859375,
+        325.48492431640625
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "code:填写唯一ID号，英文或数字\nname:PS插件功能页显示名称\ntype:模式\n默认-生成图与输入画布尺寸一致\n局部重绘-通过框选区进行输入和输出\n放大-生成图按照公工作流里指定大小输出，并同步改变PS画布大小\n\nmaxWidth:输入图片最大宽度限制\nmaxHidth:输入图片最大高度限制\n\nOS:工作流运行的电脑系统环境选择\n\n\nCode: Fill in a unique ID number, in English or numbers\nName: Display Name of PS Plugin Function Page\nType: Mode\nDefault - Generate image with input canvas size consistent\nPartial redrawing - Input and output through box selection\nZoom in and generate the image according to the specified size in the workflow, and synchronously change the size of the PS canvas\n\nMaxWidth: Maximum width limit for input image\nMaxHidth: Maximum height limit for input image\n\nOS: Selection of computer system environment for workflow operation"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 33,
+      "type": "Note",
+      "pos": [
+        20155.900390625,
+        -811.935791015625
+      ],
+      "size": [
+        515.8573608398438,
+        171.36753845214844
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "如果需要在PS里选择不同的Checkpoint或lora模型，可以配置模型输入节点。\nvar_name:PS里显示的文字描述\nckpt_name：默认加载的模型\nchekpoints:下来菜单里需要显示的模型\n\nIf you need to select different Checkpoints or Lora models in PS, you can configure the model input nodes.\nVar_name: Text description displayed in PS\nCkpt_name: default loaded model\nChekpoints: Models to be displayed in the menu below"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 18,
+      "type": "CMaster_InputString",
+      "pos": [
+        21562.728515625,
+        -783.1754150390625
+      ],
+      "size": [
+        310.9789733886719,
+        268
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            21
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CMaster_InputString",
+        "aux_id": "comfy-ui-nodes-o.git",
+        "ver": "c844d7713eff2517b09ed1ac92444bf19e6c6c5a"
+      },
+      "widgets_values": [
+        "内容描述",
+        "",
+        true,
+        "",
+        222,
+        ""
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 42,
+      "type": "GetNode",
+      "pos": [
+        22224.3203125,
+        345.0405578613281
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "MODEL",
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            57
+          ]
+        }
+      ],
+      "title": "Get_model",
+      "properties": {},
+      "widgets_values": [
+        "model"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 44,
+      "type": "CLIPTextEncode",
+      "pos": [
+        22069.1484375,
+        395.8506164550781
+      ],
+      "size": [
+        294.0918884277344,
+        58
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 43,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 43
+        },
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "widget": {
+            "name": "text"
+          },
+          "link": 44
+        }
+      ],
+      "outputs": [
+        {
+          "label": "CONDITIONING",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            58
+          ]
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        ""
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 43,
+      "type": "CLIPTextEncode",
+      "pos": [
+        22063.005859375,
+        493.7995910644531
+      ],
+      "size": [
+        295.117431640625,
+        88
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 40,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "clip",
+          "name": "clip",
+          "type": "CLIP",
+          "link": 42
+        }
+      ],
+      "outputs": [
+        {
+          "label": "CONDITIONING",
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            59
+          ]
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 61,
+      "type": "KSampler",
+      "pos": [
+        22425.443359375,
+        378.1242980957031
+      ],
+      "size": [
+        315,
+        450
+      ],
+      "flags": {},
+      "order": 55,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 57
+        },
+        {
+          "label": "positive",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 58
+        },
+        {
+          "label": "negative",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 59
+        },
+        {
+          "label": "latent_image",
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 60
+        },
+        {
+          "label": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": 61
+        },
+        {
+          "label": "denoise",
+          "name": "denoise",
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": 63
+        }
+      ],
+      "outputs": [
+        {
+          "label": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            62
+          ]
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        998954732743262,
+        "randomize",
+        30,
+        7,
+        "euler",
+        "beta",
+        1,
+        ""
+      ]
+    },
+    {
+      "id": 52,
+      "type": "VAEEncode",
+      "pos": [
+        22087.033203125,
+        741.8169555664062
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 47,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "pixels",
+          "name": "pixels",
+          "type": "IMAGE",
+          "link": 50
+        },
+        {
+          "label": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 51
+        }
+      ],
+      "outputs": [
+        {
+          "label": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            55
+          ]
+        }
+      ],
+      "properties": {},
+      "widgets_values": []
+    },
+    {
+      "id": 57,
+      "type": "SetLatentNoiseMask",
+      "pos": [
+        22104.6484375,
+        846.2935180664062
+      ],
+      "size": [
+        208.768798828125,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 52,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "samples",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 55
+        },
+        {
+          "label": "mask",
+          "name": "mask",
+          "type": "MASK",
+          "link": 67
+        }
+      ],
+      "outputs": [
+        {
+          "label": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [
+            60
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SetLatentNoiseMask",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.24",
+        "ttNbgOverride": {
+          "color": "#2a363b",
+          "bgcolor": "#3f5159",
+          "groupcolor": "#3f789e"
+        }
+      },
+      "widgets_values": [],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 62,
+      "type": "CMaster_InputRangeFloat",
+      "pos": [
+        21590,
+        1370
+      ],
+      "size": [
+        315,
+        330
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "number",
+          "name": "number",
+          "type": "FLOAT",
+          "slot_index": 0,
+          "links": [
+            63
+          ]
+        },
+        {
+          "label": "export",
+          "name": "export",
+          "type": "BOOLEAN",
+          "slot_index": 1,
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CMaster_InputRangeFloat",
+        "aux_id": "comfy-ui-nodes-o.git",
+        "ver": "c844d7713eff2517b09ed1ac92444bf19e6c6c5a"
+      },
+      "widgets_values": [
+        "重绘幅度",
+        0.6000000000000001,
+        true,
+        0,
+        1,
+        "",
+        400,
+        "固定值",
+        ""
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 38,
+      "type": "VAEDecode",
+      "pos": [
+        22783.005859375,
+        393.7995910644531
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 56,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "samples",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 62
+        },
+        {
+          "label": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 39
+        }
+      ],
+      "outputs": [
+        {
+          "label": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            69,
+            73
+          ]
+        }
+      ],
+      "properties": {},
+      "widgets_values": []
+    },
+    {
+      "id": 39,
+      "type": "CMaster_OutputImage",
+      "pos": [
+        23281.69140625,
+        340.3343200683594
+      ],
+      "size": [
+        424.1275939941406,
+        510.81610107421875
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 61,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 80
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "CMaster_OutputImage",
+        "aux_id": "comfy-ui-nodes-o.git",
+        "ver": "c844d7713eff2517b09ed1ac92444bf19e6c6c5a"
+      },
+      "widgets_values": [
+        "OutputImage",
+        true,
+        "",
+        0
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 65,
+      "type": "ETN_ApplyMaskToImage",
+      "pos": [
+        22820.630859375,
+        1027.59033203125
+      ],
+      "size": [
+        159.60000610351562,
+        46
+      ],
+      "flags": {},
+      "order": 59,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 73
+        },
+        {
+          "label": "mask",
+          "name": "mask",
+          "type": "MASK",
+          "link": 74
+        }
+      ],
+      "outputs": [
+        {
+          "label": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            72,
+            80
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ETN_ApplyMaskToImage",
+        "cnr_id": "comfyui-tooling-nodes",
+        "ver": "ea755151feb7215f6ace2fa62e5e4d8ee592d1bd",
+        "ttNbgOverride": {
+          "color": "#2a363b",
+          "bgcolor": "#3f5159",
+          "groupcolor": "#3f789e"
+        }
+      },
+      "widgets_values": [],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 47,
+      "type": "WorkflowMetadataConfig",
+      "pos": [
+        20776.25390625,
+        880.4237670898438
+      ],
+      "size": [
+        400,
+        310
+      ],
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "TEXT-02",
+        "局部重绘",
+        "局部重绘",
+        "SDXL",
+        "",
+        2048,
+        2048,
+        "",
+        "Windows"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 37,
+      "type": "CTool_ImageWorkflowMetadataTestNode",
+      "pos": [
+        19725.302734375,
+        412.91021728515625
+      ],
+      "size": [
+        315,
+        322
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "文档宽度",
+          "name": "文档宽度",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "label": "文档高度",
+          "name": "文档高度",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "label": "是否存在选区",
+          "name": "是否存在选区",
+          "type": "BOOLEAN",
+          "links": null
+        },
+        {
+          "label": "选区位置X",
+          "name": "选区位置X",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "label": "选区位置Y",
+          "name": "选区位置Y",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "label": "选区宽度",
+          "name": "选区宽度",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "label": "选区高度",
+          "name": "选区高度",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        0,
+        0,
+        false,
+        0,
+        0,
+        0,
+        0
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 76,
+      "type": "Note",
+      "pos": [
+        21587.181640625,
+        1743.7799072265625
+      ],
+      "size": [
+        322.6932678222656,
+        122.25305938720703
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "min:PS显示数值滑块的最小数值\nmax:PS显示数值滑块的最大数值\n\nMin: The minimum value of the PS display value slider\nMax: PS displays the maximum value of the value slider"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 72,
+      "type": "Note",
+      "pos": [
+        20074.314453125,
+        416.0894470214844
+      ],
+      "size": [
+        322.6932678222656,
+        122.25305938720703
+      ],
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "PS文登内的数据导入节点"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 77,
+      "type": "CMaster_InputBoolean",
+      "pos": [
+        19724.240234375,
+        787.4228515625
+      ],
+      "size": [
+        322.1636962890625,
+        268.7684020996094
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "value",
+          "name": "value",
+          "type": "BOOLEAN",
+          "links": null
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "启动XXX",
+        false,
+        true,
+        "",
+        0,
+        "固定值",
+        ""
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 78,
+      "type": "Note",
+      "pos": [
+        20072.818359375,
+        794.191162109375
+      ],
+      "size": [
+        322.6932678222656,
+        122.25305938720703
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "PS里显示开关对应输入节点\n\nPS displays the input node false or true"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 54,
+      "type": "Note",
+      "pos": [
+        21580,
+        670
+      ],
+      "size": [
+        405.6664733886719,
+        139.96646118164062
+      ],
+      "flags": {},
+      "order": 27,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "Huiyu扩展节点配置在输入端与最后输出端即可。\nvar_name：PS界面里的显示的文字\norder：PS界面里输入显示排序，数值越大越在上面。\n\nHuiyu extension nodes can be configured at the input and final output ends.\nVar_name: The displayed text in the PS interface\nOrder: In the PS interface, enter the display order, with higher values indicating higher rankings."
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 55,
+      "type": "Note",
+      "pos": [
+        21590,
+        1180
+      ],
+      "size": [
+        306.1434631347656,
+        140.8318634033203
+      ],
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "整数输入如果配置为随机种子，并显示在PS插件里\nvar_name必须为随机种子或SEED\n\n\nIf the integer input is configured as a random seed and displayed in the PS plugin\nVar_name must be a 随机种子 or SEED\n"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 1,
+      "type": "KSamplerAdvanced",
+      "pos": [
+        22329.05078125,
+        -771.6739501953125
+      ],
+      "size": [
+        315,
+        522
+      ],
+      "flags": {},
+      "order": 49,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 25
+        },
+        {
+          "label": "positive",
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 3
+        },
+        {
+          "label": "negative",
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 9
+        },
+        {
+          "label": "latent_image",
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 15
+        },
+        {
+          "label": "noise_seed",
+          "name": "noise_seed",
+          "type": "INT",
+          "widget": {
+            "name": "noise_seed"
+          },
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "label": "LATENT",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "enable",
+        1087754048510861,
+        "fixed",
+        30,
+        7,
+        "euler",
+        "beta",
+        0,
+        10000,
+        "disable"
+      ]
+    },
+    {
+      "id": 25,
+      "type": "GetNode",
+      "pos": [
+        22658.994140625,
+        -796.8056640625
+      ],
+      "size": [
+        210,
+        58
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 29,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            27
+          ]
+        }
+      ],
+      "title": "Get_vae",
+      "properties": {},
+      "widgets_values": [
+        "vae"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 11,
+      "type": "VAEDecode",
+      "pos": [
+        22650.61328125,
+        -763.088623046875
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 51,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "samples",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 12
+        },
+        {
+          "label": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 27
+        }
+      ],
+      "outputs": [
+        {
+          "label": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            28,
+            81
+          ]
+        }
+      ],
+      "properties": {},
+      "widgets_values": []
+    },
+    {
+      "id": 59,
+      "type": "LoadImageMask",
+      "pos": [
+        20779.421875,
+        1295.559326171875
+      ],
+      "size": [
+        312.6962585449219,
+        330
+      ],
+      "flags": {},
+      "order": 30,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "MASK",
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            84
+          ]
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "7777 (3).png",
+        "red",
+        "image",
+        ""
+      ]
+    },
+    {
+      "id": 56,
+      "type": "CTool_ImageMaskNode",
+      "pos": [
+        21150.8671875,
+        1305.510009765625
+      ],
+      "size": [
+        210,
+        66
+      ],
+      "flags": {},
+      "order": 31,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": []
+        },
+        {
+          "label": "mask",
+          "name": "mask",
+          "type": "MASK",
+          "slot_index": 1,
+          "links": []
+        },
+        {
+          "label": "是否存在遮罩",
+          "name": "是否存在遮罩",
+          "type": "BOOLEAN",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CTool_ImageMaskNode",
+        "aux_id": "comfy-ui-nodes-o.git",
+        "ver": "c844d7713eff2517b09ed1ac92444bf19e6c6c5a"
+      },
+      "widgets_values": [],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 85,
+      "type": "Reroute",
+      "pos": [
+        21419.736328125,
+        1303.005615234375
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 42,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 84
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "MASK",
+          "links": [
+            85
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 71,
+      "type": "Note",
+      "pos": [
+        21127.28125,
+        1478.1124267578125
+      ],
+      "size": [
+        322.6932678222656,
+        122.25305938720703
+      ],
+      "flags": {},
+      "order": 32,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "说明",
+      "properties": {},
+      "widgets_values": [
+        "局部重绘测试使用蒙版节点，输出时选用输入节点替代蒙版\n\nUse mask nodes for local redraw testing, and select input nodes instead of masks for output"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 63,
+      "type": "CropMask",
+      "pos": [
+        22597.759765625,
+        1226.844482421875
+      ],
+      "size": [
+        315,
+        170
+      ],
+      "flags": {},
+      "order": 58,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "mask",
+          "name": "mask",
+          "type": "MASK",
+          "link": 77
+        },
+        {
+          "label": "width",
+          "name": "width",
+          "type": "INT",
+          "widget": {
+            "name": "width"
+          },
+          "link": 70
+        },
+        {
+          "label": "height",
+          "name": "height",
+          "type": "INT",
+          "widget": {
+            "name": "height"
+          },
+          "link": 71
+        }
+      ],
+      "outputs": [
+        {
+          "label": "MASK",
+          "name": "MASK",
+          "type": "MASK",
+          "slot_index": 0,
+          "links": [
+            74
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CropMask",
+        "cnr_id": "comfy-core",
+        "ver": "0.3.24",
+        "ttNbgOverride": {
+          "color": "#2a363b",
+          "bgcolor": "#3f5159",
+          "groupcolor": "#3f789e"
+        }
+      },
+      "widgets_values": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 67,
+      "type": "Image Size to Number",
+      "pos": [
+        22320.03125,
+        1260.314453125
+      ],
+      "size": [
+        252,
+        126
+      ],
+      "flags": {},
+      "order": 57,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 69
+        }
+      ],
+      "outputs": [
+        {
+          "label": "width_num",
+          "name": "width_num",
+          "type": "NUMBER",
+          "links": null
+        },
+        {
+          "label": "height_num",
+          "name": "height_num",
+          "type": "NUMBER",
+          "links": null
+        },
+        {
+          "label": "width_float",
+          "name": "width_float",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "label": "height_float",
+          "name": "height_float",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "label": "width_int",
+          "name": "width_int",
+          "type": "INT",
+          "links": [
+            70
+          ]
+        },
+        {
+          "label": "height_int",
+          "name": "height_int",
+          "type": "INT",
+          "links": [
+            71
+          ]
+        }
+      ],
+      "properties": {},
+      "widgets_values": []
+    },
+    {
+      "id": 66,
+      "type": "Reroute",
+      "pos": [
+        22197.22265625,
+        964.9737548828125
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 50,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "",
+          "name": "",
+          "type": "*",
+          "link": 79
+        }
+      ],
+      "outputs": [
+        {
+          "label": "",
+          "name": "",
+          "type": "MASK",
+          "links": [
+            67,
+            77
+          ]
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 69,
+      "type": "INPAINT_ExpandMask",
+      "pos": [
+        22080.02734375,
+        1059.7354736328125
+      ],
+      "size": [
+        210,
+        82
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 48,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "mask",
+          "name": "mask",
+          "type": "MASK",
+          "link": 85
+        }
+      ],
+      "outputs": [
+        {
+          "label": "MASK",
+          "name": "MASK",
+          "type": "MASK",
+          "slot_index": 0,
+          "links": [
+            79
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "INPAINT_ExpandMask",
+        "cnr_id": "comfyui-inpaint-nodes",
+        "ver": "b9039c22de926919f26b7242cfa4da00d8b6fbec",
+        "ttNbgOverride": {
+          "color": "#2a363b",
+          "bgcolor": "#3f5159",
+          "groupcolor": "#3f789e"
+        }
+      },
+      "widgets_values": [
+        21,
+        43
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 68,
+      "type": "PreviewImage",
+      "pos": [
+        23208.701171875,
+        961.0592041015625
+      ],
+      "size": [
+        464.5534362792969,
+        582.4788208007812
+      ],
+      "flags": {},
+      "order": 60,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 72
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 70,
+      "type": "PreviewImage",
+      "pos": [
+        22973.54296875,
+        -202.77626037597656
+      ],
+      "size": [
+        369.1675720214844,
+        335.78680419921875
+      ],
+      "flags": {},
+      "order": 54,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 81
+        }
+      ],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 16,
+      "type": "CMaster_InputImage",
+      "pos": [
+        21147.525390625,
+        -773.1754150390625
+      ],
+      "size": [
+        315,
+        258
+      ],
+      "flags": {},
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "STRING",
+          "widget": {
+            "name": "image"
+          },
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "label": "image",
+          "name": "image",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            19
+          ]
+        },
+        {
+          "label": "mask",
+          "name": "mask",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CMaster_InputImage",
+        "aux_id": "comfy-ui-nodes-o.git",
+        "ver": "c844d7713eff2517b09ed1ac92444bf19e6c6c5a"
+      },
+      "widgets_values": [
+        "绘制图层",
+        "",
+        true,
+        "",
+        333,
+        ""
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 53,
+      "type": "CMaster_InputInt",
+      "pos": [
+        21590,
+        860
+      ],
+      "size": [
+        299.7991638183594,
+        282
+      ],
+      "flags": {},
+      "order": 33,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "number",
+          "name": "number",
+          "type": "INT",
+          "slot_index": 0,
+          "links": [
+            61
+          ]
+        },
+        {
+          "label": "export",
+          "name": "export",
+          "type": "BOOLEAN",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CMaster_InputInt",
+        "aux_id": "comfy-ui-nodes-o.git",
+        "ver": "c844d7713eff2517b09ed1ac92444bf19e6c6c5a"
+      },
+      "widgets_values": [
+        "随机种子",
+        656825,
+        true,
+        "",
+        111,
+        "固定值",
+        ""
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 46,
+      "type": "CMaster_InputString",
+      "pos": [
+        21580,
+        360
+      ],
+      "size": [
+        310.9789733886719,
+        268
+      ],
+      "flags": {},
+      "order": 34,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "text",
+          "name": "text",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [
+            44
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CMaster_InputString",
+        "aux_id": "comfy-ui-nodes-o.git",
+        "ver": "c844d7713eff2517b09ed1ac92444bf19e6c6c5a"
+      },
+      "widgets_values": [
+        "内容描述",
+        "",
+        true,
+        "",
+        222,
+        ""
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      3,
+      4,
+      0,
+      1,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      9,
+      8,
+      0,
+      1,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      12,
+      1,
+      0,
+      11,
+      0,
+      "LATENT"
+    ],
+    [
+      15,
+      13,
+      0,
+      1,
+      3,
+      "LATENT"
+    ],
+    [
+      18,
+      15,
+      0,
+      16,
+      0,
+      "STRING"
+    ],
+    [
+      19,
+      16,
+      0,
+      13,
+      0,
+      "IMAGE"
+    ],
+    [
+      20,
+      17,
+      0,
+      1,
+      4,
+      "INT"
+    ],
+    [
+      21,
+      18,
+      0,
+      4,
+      1,
+      "STRING"
+    ],
+    [
+      25,
+      23,
+      0,
+      1,
+      0,
+      "MODEL"
+    ],
+    [
+      26,
+      24,
+      0,
+      4,
+      0,
+      "CLIP"
+    ],
+    [
+      27,
+      25,
+      0,
+      11,
+      1,
+      "VAE"
+    ],
+    [
+      28,
+      11,
+      0,
+      26,
+      0,
+      "IMAGE"
+    ],
+    [
+      29,
+      24,
+      0,
+      8,
+      0,
+      "CLIP"
+    ],
+    [
+      30,
+      31,
+      0,
+      13,
+      1,
+      "VAE"
+    ],
+    [
+      33,
+      32,
+      2,
+      21,
+      0,
+      "VAE"
+    ],
+    [
+      34,
+      32,
+      0,
+      36,
+      0,
+      "MODEL"
+    ],
+    [
+      35,
+      36,
+      0,
+      19,
+      0,
+      "MODEL"
+    ],
+    [
+      36,
+      32,
+      1,
+      36,
+      1,
+      "CLIP"
+    ],
+    [
+      37,
+      36,
+      1,
+      20,
+      0,
+      "CLIP"
+    ],
+    [
+      39,
+      49,
+      0,
+      38,
+      1,
+      "VAE"
+    ],
+    [
+      41,
+      40,
+      0,
+      41,
+      0,
+      "STRING"
+    ],
+    [
+      42,
+      48,
+      0,
+      43,
+      0,
+      "CLIP"
+    ],
+    [
+      43,
+      48,
+      0,
+      44,
+      0,
+      "CLIP"
+    ],
+    [
+      44,
+      46,
+      0,
+      44,
+      1,
+      "STRING"
+    ],
+    [
+      50,
+      41,
+      0,
+      52,
+      0,
+      "IMAGE"
+    ],
+    [
+      51,
+      51,
+      0,
+      52,
+      1,
+      "VAE"
+    ],
+    [
+      55,
+      52,
+      0,
+      57,
+      0,
+      "LATENT"
+    ],
+    [
+      57,
+      42,
+      0,
+      61,
+      0,
+      "MODEL"
+    ],
+    [
+      58,
+      44,
+      0,
+      61,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      59,
+      43,
+      0,
+      61,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      60,
+      57,
+      0,
+      61,
+      3,
+      "LATENT"
+    ],
+    [
+      61,
+      53,
+      0,
+      61,
+      4,
+      "INT"
+    ],
+    [
+      62,
+      61,
+      0,
+      38,
+      0,
+      "LATENT"
+    ],
+    [
+      63,
+      62,
+      0,
+      61,
+      5,
+      "FLOAT"
+    ],
+    [
+      67,
+      66,
+      0,
+      57,
+      1,
+      "MASK"
+    ],
+    [
+      69,
+      38,
+      0,
+      67,
+      0,
+      "IMAGE"
+    ],
+    [
+      70,
+      67,
+      4,
+      63,
+      1,
+      "INT"
+    ],
+    [
+      71,
+      67,
+      5,
+      63,
+      2,
+      "INT"
+    ],
+    [
+      72,
+      65,
+      0,
+      68,
+      0,
+      "IMAGE"
+    ],
+    [
+      73,
+      38,
+      0,
+      65,
+      0,
+      "IMAGE"
+    ],
+    [
+      74,
+      63,
+      0,
+      65,
+      1,
+      "MASK"
+    ],
+    [
+      77,
+      66,
+      0,
+      63,
+      0,
+      "MASK"
+    ],
+    [
+      79,
+      69,
+      0,
+      66,
+      0,
+      "*"
+    ],
+    [
+      80,
+      65,
+      0,
+      39,
+      0,
+      "IMAGE"
+    ],
+    [
+      81,
+      11,
+      0,
+      70,
+      0,
+      "IMAGE"
+    ],
+    [
+      84,
+      59,
+      0,
+      85,
+      0,
+      "*"
+    ],
+    [
+      85,
+      85,
+      0,
+      69,
+      0,
+      "MASK"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 1,
+      "title": "参数输入节点（Parameter input node）",
+      "bounding": [
+        21552.728515625,
+        -853.1754150390625,
+        429.916259765625,
+        926.8517456054688
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 2,
+      "title": "最终输出",
+      "bounding": [
+        22962.3359375,
+        -849.1812744140625,
+        444.126953125,
+        594.4161376953125
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "工作流（Workflow）",
+      "bounding": [
+        22001.822265625,
+        -851.6739501953125,
+        942.60546875,
+        656.87158203125
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 4,
+      "title": "画布输入节点（Canvas input node）",
+      "bounding": [
+        20742.728515625,
+        -853.1754150390625,
+        778.134033203125,
+        481.3802185058594
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "功能配置（functional configuration）",
+      "bounding": [
+        20742.728515625,
+        -333.17510986328125,
+        792.9131469726562,
+        401.0581970214844
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 6,
+      "title": "模型输入节点（Model input nodes）",
+      "bounding": [
+        19711.04296875,
+        -890.490234375,
+        1015.5213012695312,
+        1232.529052734375
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 7,
+      "title": "基础文生图配置模版（Basic text to image template）",
+      "bounding": [
+        20742.728515625,
+        -896.775390625,
+        2728.237060546875,
+        1071.28955078125
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 15,
+      "title": "基础局部重绘配置模版（Basic partial redraw template）",
+      "bounding": [
+        20755.013671875,
+        207.55735778808594,
+        2999.322265625,
+        1551.99365234375
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 8,
+      "title": "参数输入节点（Parameter input node）",
+      "bounding": [
+        21569.564453125,
+        274.00640869140625,
+        471.9569091796875,
+        1634.4854736328125
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 9,
+      "title": "最终输出",
+      "bounding": [
+        23064.12890625,
+        251.1573028564453,
+        662.9710083007812,
+        644.0509033203125
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 10,
+      "title": "工作流（Workflow）",
+      "bounding": [
+        22063.005859375,
+        273.7996826171875,
+        942.60546875,
+        656.87158203125
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 11,
+      "title": "画布输入节点（Canvas input node）",
+      "bounding": [
+        20765.013671875,
+        276.896484375,
+        782.2764282226562,
+        504.52398681640625
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 12,
+      "title": "功能配置（functional configuration）",
+      "bounding": [
+        20766.25390625,
+        800.1161499023438,
+        787.7265625,
+        409.0848693847656
+      ],
+      "color": "#A88",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 13,
+      "title": "选区作为遮罩输入（Select as mask input）",
+      "bounding": [
+        20769.421875,
+        1221.9593505859375,
+        779.429443359375,
+        527.5923461914062
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    },
+    {
+      "id": 14,
+      "title": "蒙版",
+      "bounding": [
+        22064.833984375,
+        943.2557373046875,
+        930.2578735351562,
+        488.23638916015625
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "flags": {}
+    }
+  ],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.3719008264462844,
+      "offset": [
+        -19084.64811863455,
+        1213.3667216481635
+      ]
+    },
+    "ue_links": []
+  },
+  "version": 0.4
+}

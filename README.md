@@ -15,22 +15,19 @@
 3. 点击左上角绘屿AI -> 导出配置
 4. 启动[智慧引擎AI工具箱](https://huuuiai.com)
 5. 打开本地服务器配置
-
 ![Snipaste_2025-05-18_14-43-50.png](docs%2Fimages%2FSnipaste_2025-05-18_14-43-50.png)
 ![Snipaste_2025-05-18_14-45-01.png](docs%2Fimages%2FSnipaste_2025-05-18_14-45-01.png)
 
 6. 填写对应信息
 ![Snipaste_2025-05-18_14-46-11.png](docs%2Fimages%2FSnipaste_2025-05-18_14-46-11.png)
 
-8. 把配置文件放入配置的文件夹中
+7. 把配置文件放入配置的文件夹中
 ![Snipaste_2025-05-18_14-49-54.png](docs%2Fimages%2FSnipaste_2025-05-18_14-49-54.png)
 
-9. 启动
-
+8. 启动
 ![Snipaste_2025-05-18_14-46-29.png](docs%2Fimages%2FSnipaste_2025-05-18_14-46-29.png)
 
-10. 刷新页面，即可看到绘屿AI节点
-
+9. 刷新页面，即可看到绘屿AI节点
 ![Snipaste_2025-05-18_14-55-01.png](docs%2Fimages%2FSnipaste_2025-05-18_14-55-01.png)
 ![Snipaste_2025-05-18_14-55-39.png](docs%2Fimages%2FSnipaste_2025-05-18_14-55-39.png)
 ![Snipaste_2025-05-18_14-55-53.png](docs%2Fimages%2FSnipaste_2025-05-18_14-55-53.png)

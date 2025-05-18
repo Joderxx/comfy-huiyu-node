@@ -1,6 +1,10 @@
 # 绘屿AI插件
 
-该项目为ComfyUI自定义节点插件，旨在为[智慧引擎AI工具箱](https://huuuiai.com)提供本地部署能力，同时可以与绘屿AI（Photoshop）插件进行交互
+该项目为ComfyUI自定义节点插件，旨在为[智慧引擎AI工具箱](https://huuuiai.com)提供本地部署能力，同时可以与绘屿AI（Photoshop）插件进行交互。
+
+注意：该项目（comfy-huiyu-node）只限个人学习使用，禁止商用行为。如需商业用途请联系``深圳智绘引擎科技有限公司``([联系方式](https://huuuiai.com/enterprise))授权使用。
+
+© 深圳智绘引擎科技有限公司版权所有
 
 ## 安装方式
 

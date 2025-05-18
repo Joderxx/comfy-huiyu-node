@@ -1,8 +1,8 @@
 # 绘屿AI插件
 
-该项目为ComfyUI自定义节点插件，旨在为[智慧引擎AI工具箱](https://huuuiai.com)提供本地部署能力，同时可以与绘屿AI（Photoshop）插件进行交互。
+该项目为ComfyUI自定义节点插件，旨在为[智绘引擎AI工具箱](https://huuuiai.com)提供本地部署能力，同时可以与绘屿AI（Photoshop）插件进行交互。
 
-注意：该项目（包括[智慧引擎AI工具箱](https://huuuiai.com)本地服务）只限个人学习使用，禁止商业用途。如需商业用途，请联系``深圳智绘引擎科技有限公司``([联系方式](https://huuuiai.com/enterprise))进行授权使用。
+注意：该项目（包括[智绘引擎AI工具箱](https://huuuiai.com)本地服务）只限个人学习使用，禁止商业用途。如需商业用途，请联系``深圳智绘引擎科技有限公司``([联系方式](https://huuuiai.com/enterprise))进行授权使用。
 
 © [深圳智绘引擎科技有限公司版权所有](https://huuuiai.com)
 
@@ -23,7 +23,7 @@
 
 ![Snipaste_2025-05-18_16-14-31.png](docs/images/Snipaste_2025-05-18_16-14-31.png)
 
-4. 启动[智慧引擎AI工具箱](https://huuuiai.com)
+4. 启动[智绘引擎AI工具箱](https://huuuiai.com)
 5. 打开本地服务器配置（点击系统右下角底部托盘）
 
 ![Snipaste_2025-05-18_14-43-50.png](docs/images/Snipaste_2025-05-18_14-43-50.png)
